@@ -1,33 +1,32 @@
-# Trading Bot (MQL5 Expert Advisor)
+# Grid Trend Hybrid Bot
 
-This repository contains a simple MQL5 Expert Advisor designed for Metatrader 5.
+This branch contains a hybrid MQL5 Expert Advisor combining:
 
-## Strategy
-
-- Trend-following system using EMA crossover
-- RSI confirmation filter
-- Risk-based position sizing
-- Optional trailing stop
-- Single-symbol / current-chart operation
+- trend-following logic using EMA direction
+- RSI confirmation
+- controlled grid entries
+- risk-limited position management
+- optional trailing stop
+- max drawdown and max open trades protection
 
 ## Files
 
-- `MQL5/Experts/TrendRsiBot.mq5` – Expert Advisor source code
+- `MQL5/Experts/GridTrendHybrid.mq5` — main Expert Advisor
 
-## How to use
+## Strategy summary
 
-1. Copy the `MQL5` folder into your MetaEditor working directory or the MQL5 folder in your MT5 installation.
-2. Open MetaEditor in MetaTrader 5.
-3. Compile the file.
-4. Attach `TrendRsiBot` to a chart.
-5. Adjust inputs as needed.
+- Detect market trend using EMA alignment
+- Confirm with RSI momentum
+- On trend pullbacks, add controlled grid entries
+- Use fixed stop loss and take profit spacing
+- Stop opening new grids after max exposure or drawdown thresholds
 
-## Recommended setup
+## Recommended settings
 
-- Symbol: major FX pair, e.g. EURUSD
-- Timeframe: H1 or H4
-- Backtest before live use
+- Symbol: EURUSD or GBPUSD
+- Timeframe: M15 or H1
+- Backtest thoroughly before using on live account
 
-## Important note
+## Important
 
-This bot is for educational purposes only. Do not run it in live trading without proper testing and risk controls.
+This is educational and experimental code. Grid systems can accumulate risk quickly if not properly parameterized.
