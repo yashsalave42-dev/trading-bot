@@ -1,33 +1,36 @@
-# Trading Bot (MQL5 Expert Advisor)
+# Trading Bot Collection
 
-This repository contains a simple MQL5 Expert Advisor designed for Metatrader 5.
+This repository contains a set of MetaTrader 5 Expert Advisors for educational and research use.
 
-## Strategy
+## Included EAs
 
-- Trend-following system using EMA crossover
-- RSI confirmation filter
-- Risk-based position sizing
-- Optional trailing stop
-- Single-symbol / current-chart operation
+- `MQL5/Experts/ScalpingBot.mq5` — fast market-entry scalper for short-term intraday trading
+- `MQL5/Experts/GridTrendHybrid.mq5` — trend-following EA with layered grid entries and risk limits
 
-## Files
+## Strategy overview
 
-- `MQL5/Experts/TrendRsiBot.mq5` – Expert Advisor source code
+### Scalping Bot
+- EMA trend filter
+- RSI momentum confirmation
+- tight stop loss
+- low spread filter
+- max trades per direction
+- optional trailing stop
+
+### Grid Trend Hybrid
+- EMA trend detection
+- RSI confirmation
+- layered grid entries during trend continuation
+- risk caps and drawdown checks
+- position limits and optional trail
 
 ## How to use
 
-1. Copy the `MQL5` folder into your MetaEditor working directory or the MQL5 folder in your MT5 installation.
-2. Open MetaEditor in MetaTrader 5.
-3. Compile the file.
-4. Attach `TrendRsiBot` to a chart.
-5. Adjust inputs as needed.
+1. Copy the `MQL5` folder to your MetaTrader 5 installation.
+2. Open MetaEditor.
+3. Compile each EA.
+4. Attach to a chart and test thoroughly in Strategy Tester.
 
-## Recommended setup
+## Important
 
-- Symbol: major FX pair, e.g. EURUSD
-- Timeframe: H1 or H4
-- Backtest before live use
-
-## Important note
-
-This bot is for educational purposes only. Do not run it in live trading without proper testing and risk controls.
+No trading system is guaranteed to be profitable. Always backtest, optimize carefully, and use realistic risk management before live deployment.
